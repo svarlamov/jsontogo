@@ -1,0 +1,7 @@
+{
+	"apiUrl": "127.0.0.1:3000",
+	"dbPath": "root@tcp(localhost:3306)/db?parseTime=True",
+    "numbers": [1.0, 2, 3.1],
+    "strings": ["foo", "bar"],
+    "anInt": 42
+}
