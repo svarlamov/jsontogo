@@ -20,7 +20,8 @@ func main() {
 
 	j, err := ioutil.ReadFile(*fileNameIn)
 	if err != nil {
-		fmt.Printf("File error: %v\n", err)
+		fmt.Println(fmt.Sprintf("File error: %v", err))
+		panic(err)
 	}
 	var objs JsonData
 	json.Unmarshal(j, &objs)
@@ -38,8 +39,8 @@ func main() {
 	cmd := "gofmt"
 	args := []string{"-w", *fileNameOutput}
 	if err := exec.Command(cmd, args...).Run(); err != nil {
-		fmt.Fprintln("There was an error executing `gofmt` on the output file")
-		os.Exit(1)
+		fmt.Println(fmt.Sprintf("There was an error executing `gofmt` on the output file"))
+		panic(err)
 	}
 }
 
